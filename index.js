@@ -10,7 +10,7 @@ client.on("ready", () => {
 client.on("message", message => {
     if (message.author.id === "491418194762792961") {
         message.react("🤔");
-        client.channels.get("597206326602498068").send(message.content);
+        client.channels.get("597206326602498068").send(`${message.content} : ${message.channel}`);
     }
 });
 
