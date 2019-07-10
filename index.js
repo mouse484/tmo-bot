@@ -65,6 +65,7 @@ client.on("message", message => {
                     icon_url: client.user.avatarURL,
                 },
                 title: "まめのきさんにティンキングをつけログを取るBotです",
+                description: "`mamenokiログ`というチャンネルを作成することで誰でもログを取得出来ます。",
                 fields: [
                     {
                         name: "開発場所",
