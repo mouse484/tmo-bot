@@ -47,7 +47,7 @@ client.on("message", message => {
             message_option.file = message.attachments.first().url;
         }
 
-        mame_channel.send(message.cleanContent, message_option);
+        client.channels.filter(c => c.name.match("mamenokiログ")).forEach((ch) => ch.send(message.cleanContent, message_option));
     }
 
     if (message.isMemberMentioned(mamenoki)) {
