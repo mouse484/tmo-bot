@@ -5,7 +5,7 @@ const client = new Discord.Client();
 
 client.on("ready", () => {
     console.log("まめのき🤔");
-    client.user.setActivity("Thinking Mamenoki Online");
+    client.user.setActivity(`Thinking Mamenoki Online | ${client.guilds.size} Server`);
 });
 
 client.on("message", message => {
