@@ -5,7 +5,6 @@ const client = new Discord.Client();
 
 client.on("ready", () => {
     console.log("まめのき🤔");
-    client.user.setActivity(`mame:help | ${client.guilds.size} Server`);
 });
 
 client.on("message", message => {
@@ -16,6 +15,8 @@ client.on("message", message => {
 
     if (message.author.id === mamenoki.id) {
 
+        client.user.setActivity(`mame:help | ${client.guilds.size} Server`);
+
         message.react("🤔");
 
         if (message.content.match(/(::|--)[a-z]/)) return;
@@ -24,6 +25,11 @@ client.on("message", message => {
             embed: {
                 fields: [
                     {
+                        name: "サーバー",
+                        value: message.guild.name,
+                        inline: true,
+                    },
+                    {
                         name: "チャンネル",
                         value: `<#${message.channel.id}>`,
                         inline: true,
@@ -31,7 +37,6 @@ client.on("message", message => {
                     {
                         name: "リンク",
                         value: `[まめのきさんの発言はこちら](${message.url})`,
-                        inline: true,
                     }
                 ],
                 timestamp: new Date(),
