@@ -20,7 +20,7 @@ client.on("message", message => {
 
         if (message.content.match(/(::|--)[a-z]/)) return;
 
-        mame_channel.send(message.cleanContent, {
+        const message_option = {
             embed: {
                 fields: [
                     {
@@ -35,8 +35,14 @@ client.on("message", message => {
                     }
                 ],
                 timestamp: new Date(),
-            },
-        });
+            }
+        };
+
+        if (message.attachments.first()) {
+            message_option.file = message.attachments.first().url;
+        }
+
+        mame_channel.send(message.cleanContent, message_option);
     }
 
     if (message.isMemberMentioned(mamenoki)) {
