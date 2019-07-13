@@ -4,6 +4,7 @@ const client = new Discord.Client();
 
 const log = require("./log.js");
 const help = require("./help.js");
+const thinking = require("./thinking.js");
 
 
 client.on("ready", () => {
@@ -20,7 +21,7 @@ client.on("message", message => {
 
         client.user.setActivity(`mame:help | ${client.guilds.size} Server`);
 
-        message.react("🤔");
+        thinking(client, message);
 
         if (message.content.match(/(::|--)[a-z]/)) return;
 
