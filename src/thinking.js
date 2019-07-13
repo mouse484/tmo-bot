@@ -12,4 +12,5 @@ module.exports = (client, message) => {
     message.react(client.emojis.get("599470644270465065"));
     message.react(client.emojis.get("599473313923858442"));
     message.react(client.emojis.get("599473402994229269"));
+    message.react(client.emojis.get("599480437806727168"));//14
 }
