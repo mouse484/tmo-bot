@@ -5,4 +5,5 @@ module.exports = (client, message) => {
     message.react(client.emojis.get("599462908518203408"));
     message.react(client.emojis.get("599462778683654146"));
     message.react(client.emojis.get("599466988061982740"));
+    message.react(client.emojis.get("599462853614895135"));
 }
